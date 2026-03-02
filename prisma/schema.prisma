@@ -12,3 +12,38 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+
+model       Admin       {
+  id        String      @id @default(uuid())
+  email     String      @unique
+  passowrd  String
+  createdAt DateTime    @default(now())
+}
+
+
+model       Blog       {
+  id        String      @id @default(uuid())
+  title     String
+  content  String
+  slug      String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  isPublished Boolean  @default(false)
+
+  @@index([slug])
+  @@index([createdAt])
+}
+
+
+model       Visit {
+  id   String      @id    @default(uuid())
+  ip    String?
+  page  String
+  userAgent String?
+  createdAt DateTime @default(now())
+
+
+  @@index([page])
+  @@index([createdAt])
+}

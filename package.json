@@ -3,16 +3,17 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
-  "scripts" : {
-  	"dev" : "bun --watch src/index.ts",
-	"start" : "bun src/index.ts",
-	"prisma:generate": "bunx prisma generate",
-        "prisma:migrate": "bunx prisma migrate dev",
-        "prisma:studio": "bunx prisma studio"
-   },
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/serverts",
+    "prisma:generate": "bunx prisma generate",
+    "prisma:migrate": "bunx prisma migrate dev",
+    "prisma:studio": "bunx prisma studio"
+  },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
     "@types/bun": "latest",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10"
   },
