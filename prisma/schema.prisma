@@ -38,10 +38,10 @@ model       Blog       {
 
 model       Visit {
   id   String      @id    @default(uuid())
-  ip    String?
-  page  String
-  userAgent String?
-  createdAt DateTime @default(now())
+  ip    String? // Optional: Store IP address for more insights
+  page  String // The page or endpoint visited
+  userAgent String? // Optional: Store user agent for more insights
+  createdAt DateTime @default(now()) // Timestamp of the visit
 
 
   @@index([page])
